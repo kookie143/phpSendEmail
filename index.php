@@ -44,9 +44,9 @@ try {
     // $mail->addBCC('bcc@example.com');
 
     //Attachments
-    $filename = 'ANA MARIE EMPLOYMENT CONTRACT.pdf';
+    $filename = 'SAMPLE ATTACHMENT.pdf';
     //$mail->addAttachment('/var/tmp/file.tar.gz');         //Add attachments
-    $mail->addAttachment('attachments/employment_contract.pdf', $filename);    //Optional name
+    $mail->addAttachment('attachments/attachment.pdf', $filename);    //Optional name
 
     //Content
     $mail->isHTML(true);                                  //Set email format to HTML
