@@ -14,9 +14,9 @@ Mailtrap.io - https://mailtrap.io/home
 
 1. Run `composer install`
 
-2. duplicate `.env.sample` file and rename to `.env`
+2. Duplicate `.env.sample` file and rename to `.env`
     2.1 add configuration values
 
-3. run the PHP built-in server
+3. Run the PHP built-in server
    $ `php -S localhost:9000`
 
