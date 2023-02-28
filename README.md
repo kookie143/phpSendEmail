@@ -1,4 +1,4 @@
-# PHP Application
+# PHP Send Email
 
 A php demo for sending email using PHPMailer library and Mailtrap.io email server.
 
