@@ -4,29 +4,18 @@ declare(strict_types=1);
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
-use PHPMailer\PHPMailer\SMTP;
+
 
 require 'vendor/autoload.php';
 
-$config = [
-    'protocol' => 'smtp',
-    'smtp_host' => 'sandbox.smtp.mailtrap.io',
-    'smtp_port' => 2525,
-    'smtp_user' => 'ae90482d7568c3',
-    'smtp_pass' => '3f59c7311a7ec3',
-    'crlf' => "\r\n",
-    'newline' => "\r\n"
-];
 
-
+// Load .env
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+$dotenv->load();
 
 
 // receiver
 $receiver1 = "anamarieterante143@gmail.com";
-
-
-// message
-$msg = "First line of text\nSecond line of text";
 
 // subject
 $subject = "Testing email";
@@ -40,11 +29,11 @@ try {
     //Create an instance; passing `true` enables exceptions
     $mail = new PHPMailer(true);
     $mail->isSMTP();
-    $mail->Host = 'sandbox.smtp.mailtrap.io';
+    $mail->Host = $_ENV['MAIL_HOST'];
     $mail->SMTPAuth = true;
-    $mail->Port = 2525;
-    $mail->Username = 'ae90482d7568c3';
-    $mail->Password = '3f59c7311a7ec3';
+    $mail->Port = $_ENV['MAIL_PORT'];
+    $mail->Username = $_ENV['MAIL_USERNAME'];
+    $mail->Password = $_ENV['MAIL_PASSWORD'];
 
     //Recipients
     $mail->setFrom('support@rtnhs.org', 'Mailer');
